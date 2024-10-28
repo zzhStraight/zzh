@@ -26,7 +26,7 @@ label_sources = {
     "no_vocals.mp3": "🎶 无人声",
     "vocals.mp3": "🎤 人声",
     "drums.mp3": "🥁 鼓",
-    "bass.mp3": "🎸 低音",
+    "bass.mp3": "🎸 贝斯",
     "guitar.mp3": "🎸 吉他",
     "piano.mp3": "🎹 钢琴",
     "other.mp3": "🎶 其他",
@@ -38,7 +38,7 @@ separation_mode_to_model = {
         ["vocals.mp3", "no_vocals.mp3"],
     ),
     "人声与伴奏（高质量，较慢）": ("htdemucs", ["vocals.mp3", "no_vocals.mp3"]),
-    "人声、鼓、低音与其他（较慢）": (
+    "人声、鼓、贝斯与其他（较慢）": (
         "htdemucs",
         ["vocals.mp3", "drums.mp3", "bass.mp3", "other.mp3"],
     ),
@@ -199,8 +199,7 @@ def body():
             [
                 "人声与伴奏（低质量，较快）",
                 "人声与伴奏（高质量，较慢）",
-                "人声、鼓、低音与其他（较慢）",
-                "人声、鼓、低音、吉他、钢琴与其他（最慢）",
+                "人声、鼓、贝斯与其他（较慢）",
             ],
             on_change=reset_execution(),
             key="separation_mode",
@@ -222,14 +221,14 @@ def body():
                     max_value=n_secs,
                     step=1,
                     value=0,
-                    help=f"该分离模式的最大持续时间为 {max_duration} 秒。\n复制此空间以 [去除任何限制](https://github.com/fabiogra/moseca#are-there-any-limitations)。",
+                    help=f"该分离模式的最大持续时间为 {max_duration} 秒。",
                     format="%d",
                 )
                 st.session_state.start_time = start_time
                 end_time = min(start_time + max_duration, n_secs)
                 song = song[start_time * 1000 : end_time * 1000]
                 st.info(
-                    f"音频源将处理从 {start_time} 到 {end_time} 秒。\n复制此空间以 [去除任何限制](https://github.com/fabiogra/moseca#are-there-any-limitations)。",
+                    f"音频源将处理从 {start_time} 到 {end_time} 秒。",
                     icon="⏱",
                 )
         else:

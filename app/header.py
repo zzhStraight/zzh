@@ -30,8 +30,8 @@ def header(logo_and_title=True):
         switch_page(DEFAULT_PAGE)
 
     st.set_page_config(
-        page_title="Moseca - 音乐分离与卡拉OK - 人声去除器。",
-        page_icon="img/logo_moseca.png",
+        page_title="zzsepa - 音乐分离与卡拉OK - 人声去除器。",
+        page_icon="img/logo_zzsepa.png",
         layout="wide",
         initial_sidebar_state="collapsed",
     )
@@ -56,10 +56,10 @@ def header(logo_and_title=True):
     if logo_and_title:
         head = st.columns([5, 1, 3, 5])
         with head[1]:
-            st.image("img/logo_moseca.png", use_column_width=False, width=80)
+            st.image("img/logo_zzsepa.png", use_column_width=False, width=80)
         with head[2]:
             st.markdown(
-                "<h1>moseca</h1><p><b>音乐源分离与卡拉OK</b></p>",
+                "<h1>zzsepa</h1><p><b>音乐源分离与卡拉OK</b></p>",
                 unsafe_allow_html=True,
             )
 

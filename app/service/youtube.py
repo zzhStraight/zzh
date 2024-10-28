@@ -30,7 +30,7 @@ def download_audio_from_youtube(url, output_path):
     with yt_dlp.YoutubeDL({"quiet": True}) as ydl:
         info_dict = ydl.extract_info(url, download=False)
     if info_dict.get("duration", 0) > 360:
-        st.error("Song is too long. Please use a song no longer than 6 minutes.")
+        st.error("请选择不超过 6 分钟的视频。")
         return
     video_title = info_dict.get("title", None)
     video_title = _sanitize_filename(video_title)
