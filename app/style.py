@@ -82,7 +82,7 @@ CSS = (
     }
 
     /* Apply the futuristic font to the text title*/
-    #moseca {
+    #zzsepa {
         font-family: '"""
     + _font_title
     + """', sans-serif;
