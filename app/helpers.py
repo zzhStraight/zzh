@@ -27,10 +27,10 @@ def check_file_availability(url):
 @st.cache_data(show_spinner=False)
 def url_is_valid(url):
     if url.startswith("http") is False:
-        st.error("URL 应该以 http 或 https 开头。")
+        st.error("URL 应以 http 或 https 开头。")
         return False
     if url.split(".")[-1] not in extensions:
-        st.error("不支持扩展。")
+        st.error("扩展名不支持")
         return False
     return True
 
@@ -40,7 +40,7 @@ def load_audio_segment(path: str, format: str) -> AudioSegment:
     try:
         return AudioSegment.from_file(path, format=format)
     except Exception as e:
-        st.error("音频文件无效。")
+        st.error("音频文件无效")
         log.warning(e)
         st.stop()
 
@@ -76,7 +76,7 @@ def load_list_of_songs(path="sample_songs.json"):
         return json.load(open(path))
     else:
         st.error(
-            "没有可用的例子。"
+            "没有可用的示例。"
         )
 
 
@@ -147,7 +147,7 @@ def switch_page(page_name: str):
             )
 
     page_names = [_standardize_name(config["page_name"]) for config in pages.values()]
-    raise ValueError(f"找不到页面 {page_name}。必须是 {page_names} 中的一个")
+    raise ValueError(f"找不到页面 {page_name}。必须是 {page_names} 中的一个。")
 
 
 def st_local_audio(pathname, key):
@@ -173,7 +173,7 @@ def file_size_is_valid(file_size):
         max_size_mb = int(os.environ["STREAMLIT_SERVER_MAX_UPLOAD_SIZE"])
         if max_size_mb and file_size > max_size_mb * 1024 * 1024:
             st.error(
-                f"文件太大，无法下载。 允许的最大大小：{max_size_mb}MB。"
+                f"文件太大。 最大文件大小: {max_size_mb}MB."
             )
             return False
     return True
@@ -195,10 +195,10 @@ def _remove_file_older_than(file_path: str, max_age_limit: float):
     # If the file is older than the age limit, delete it
     if os.path.getmtime(file_path) < max_age_limit:
         try:
-            log.info(f"删除 {file_path}")
+            log.info(f"Deleting {file_path}")
             os.remove(file_path)
-        except OSError as e:
-            log.warning(f"Error: 无法删除 {file_path}. 原因: {e.strerror}")
+        # except OSError as e:
+        #     log.warning(f"Error: Could not delete {file_path}. Reason: {e.strerror}")
 
 
 def delete_old_files(directory: str, age_limit_seconds: int):
