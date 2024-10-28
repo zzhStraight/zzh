@@ -197,8 +197,8 @@ def _remove_file_older_than(file_path: str, max_age_limit: float):
         try:
             log.info(f"Deleting {file_path}")
             os.remove(file_path)
-        # except OSError as e:
-        #     log.warning(f"Error: Could not delete {file_path}. Reason: {e.strerror}")
+        except OSError as e:
+            log.info(f"Error: Could not delete {file_path}. Reason: {e.strerror}")
 
 
 def delete_old_files(directory: str, age_limit_seconds: int):
