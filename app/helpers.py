@@ -76,7 +76,7 @@ def load_list_of_songs(path="sample_songs.json"):
         return json.load(open(path))
     else:
         st.error(
-            "没有可用的例子。您需要设置环境变量“PREPARE_SAMPLES=true”"
+            "没有可用的例子。"
         )
 
 
