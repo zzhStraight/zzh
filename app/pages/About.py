@@ -16,38 +16,6 @@ def body():
 
         <br>
 
-        ### 高质量的音轨分离
-
-        <center><img title="高质量的音轨分离" src="https://i.imgur.com/l7H8YWL.png" width="60%" ></img></center>
-
-        <br>
-
-        <font size="3"> 可以分离多达 6 个音轨，包括 🗣人声、🥁鼓、🔉贝斯、🎸吉他、🎹钢琴（测试版）和 🎶 其他音轨。 </font>
-
-        <br>
-
-        ### 先进的 AI 算法
-
-        <center><img title="先进的 AI 算法" src="https://i.imgur.com/I8Pvdav.png" width="60%" ></img></center>
-
-        <br>
-
-        <font size="3"> zzsepa 利用最先进的 AI 技术，准确提取您原始歌曲中的人声或音乐。 </font>
-
-        <br>
-
-        ### 卡拉 OK 乐趣
-
-        <center><img title="卡拉 OK 乐趣" src="https://i.imgur.com/nsn3JGV.png" width="60%" ></img></center>
-
-        <br>
-
-        <font size="3"> 以全新的方式与您最喜欢的曲目互动！ </font>
-
-        <font size="3"> zzsepa 提供身临其境的在线卡拉 OK 体验，允许您搜索 YouTube 上的任何歌曲并在线去除人声。 </font>
-
-        <font size="3"> 享受高质量伴奏，尽情在家唱歌。</font>
-
         <br>
 
         ------
