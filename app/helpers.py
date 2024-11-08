@@ -201,10 +201,6 @@ def _get_files_to_not_delete():
 #             log.info(f"Error: Could not delete {file_path}. Reason: {e.strerror}")
 
 def _remove_file_older_than(file_path: str, max_age_limit: float):
-    if os.path.exists(file_path):  # 检查文件是否存在
-        if os.path.getmtime(file_path) < max_age_limit:
-            os.remove(file_path)
-    else:
         print(f"文件 {file_path} 不存在，跳过删除。")
 
 def delete_old_files(directory: str, age_limit_seconds: int):
