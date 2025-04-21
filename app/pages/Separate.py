@@ -33,16 +33,16 @@ label_sources = {
 }
 
 separation_mode_to_model = {
-    "人声与伴奏（低质量，较快）": (
+    "TFU-MSS": (
         "vocal_remover",
         ["vocals.mp3", "no_vocals.mp3"],
     ),
-    "人声与伴奏（高质量，较慢）": ("htdemucs", ["vocals.mp3", "no_vocals.mp3"]),
-    "人声、鼓、贝斯与其他（较慢）": (
+    "TFU-MSS(TFSW-Transformer)": ("htdemucs", ["vocals.mp3", "no_vocals.mp3"]),
+    "BSRNN": (
         "htdemucs",
         ["vocals.mp3", "drums.mp3", "bass.mp3", "other.mp3"],
     ),
-    "人声、鼓、低音、吉他、钢琴与其他（最慢）": (
+    "DTTNET": (
         "htdemucs_6s",
         ["vocals.mp3", "drums.mp3", "bass.mp3", "guitar.mp3", "piano.mp3", "other.mp3"],
     ),
@@ -106,8 +106,8 @@ def body():
         with st.columns([1, 8, 1])[1]:
             option = option_menu(
                 menu_title=None,
-                options=["示例", "上传文件", "从 URL"],
-                icons=["cloud-upload-fill", "link-45deg", "music-note-list"],
+                options=["示例", "上传文件"],
+                icons=["cloud-upload-fill", "link-45deg"],
                 orientation="horizontal",
                 styles={
                     "container": {
@@ -197,14 +197,14 @@ def body():
         separation_mode = st.selectbox(
             "选择分离模式",
             [
-                "人声与伴奏（低质量，较快）",
-                "人声与伴奏（高质量，较慢）",
-                "人声、鼓、贝斯与其他（较慢）",
+                "TFU-MSS",
+                "TFU-MSS(TFSW-Transformer)",
+                "BSRNN",
             ],
             on_change=reset_execution(),
             key="separation_mode",
         )
-        if separation_mode == "人声与伴奏（低质量，较快）":
+        if separation_mode == "TFU-MSS":
             max_duration = 30
         else:
             max_duration = 15
@@ -257,7 +257,7 @@ def body():
                             )
                         else:
                             stem = None
-                            if separation_mode == "人声与伴奏（高质量，较慢）":
+                            if separation_mode == "BSRNN":
                                 stem = "vocals"
 
                             separator(
