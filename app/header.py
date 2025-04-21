@@ -36,8 +36,8 @@ def header(logo_and_title=True):
         initial_sidebar_state="collapsed",
     )
     st.markdown(CSS, unsafe_allow_html=True)
-
-    options = ["Separate", "Karaoke"]
+    
+    options = ["本地音乐源分离", "在线音乐源分离"]
 
     page = option_menu(
         menu_title=None,
