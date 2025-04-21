@@ -112,14 +112,14 @@ def body():
                 styles={
                     "container": {
                         "width": "100%",
-                        "height": "3.5rem",
+                        "height": "5.5rem",
                         "margin": "0px",
                         "padding": "0px",
                     },
                     "icon": {"font-size": "1rem"},
                     "nav-link": {
                         "display": "flex",
-                        "height": "3rem",
+                        "height": "5rem",
                         "justify-content": "center",
                         "align-items": "center",
                         "text-align": "center",
