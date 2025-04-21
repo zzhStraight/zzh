@@ -37,7 +37,7 @@ def header(logo_and_title=True):
     )
     st.markdown(CSS, unsafe_allow_html=True)
 
-    options = ["Separate", "Karaoke", "About"]
+    options = ["Separate", "Karaoke"]
 
     page = option_menu(
         menu_title=None,
