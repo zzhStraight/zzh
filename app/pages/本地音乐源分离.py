@@ -200,6 +200,7 @@ def body():
                 "TFU-MSS",
                 "TFU-MSS(TFSW-Transformer)",
                 "BSRNN",
+                "DTTNET",
             ],
             on_change=reset_execution(),
             key="separation_mode",
@@ -257,7 +258,7 @@ def body():
                             )
                         else:
                             stem = None
-                            if separation_mode == "BSRNN":
+                            if separation_mode == "DTTNET":
                                 stem = "vocals"
 
                             separator(
