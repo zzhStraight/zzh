@@ -37,7 +37,7 @@ def header(logo_and_title=True):
     )
     st.markdown(CSS, unsafe_allow_html=True)
     
-    options = ["本地音乐源分离", "在线音乐源分离"]
+    options = ["Separate", "Karaoke"]
 
     page = option_menu(
         menu_title=None,
