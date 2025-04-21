@@ -30,7 +30,7 @@ def header(logo_and_title=True):
         switch_page(DEFAULT_PAGE)
 
     st.set_page_config(
-        page_title="zzsepa - 音乐分离与卡拉OK - 人声去除器。",
+        page_title="音乐源分离系统",
         page_icon="img/logo_zzsepa.png",
         layout="wide",
         initial_sidebar_state="collapsed",
@@ -59,7 +59,7 @@ def header(logo_and_title=True):
             st.image("img/logo_zzsepa.png", use_column_width=False, width=80)
         with head[2]:
             st.markdown(
-                "<h1>zzsepa</h1><p><b>音乐源分离与卡拉OK</b></p>",
+                "<h1>音乐源分离系统</h1>",
                 unsafe_allow_html=True,
             )
 
